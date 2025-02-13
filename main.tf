@@ -1,6 +1,6 @@
 provider "google" {
   project = "mythic-inn-420620"
-  region  = var.region
+  region  = "us-central1"
 }
 
 
