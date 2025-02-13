@@ -16,16 +16,13 @@ pipeline {
                 }
             }
         }
-     stage ("python1"){
-
-     steps {
-   script{
- python3 p1.py
-}
-
-
- 
-     }
-     }
+        stage("Python Execution") {
+            steps {
+                script {
+                    sh 'python3 p1.py' 
+                }
+            }
+        }
     }
 }
+
