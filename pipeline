@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    environment {
+        GOOGLE_APPLICATION_CREDENTIALS = credentials("gcp-owner")
+    }
+    parameters {
+        choice(name: 'status', choices: ['apply', 'destroy'], description: 'Select Terraform action')
+    }
+    stages {
+        stage("Terraform Stages") {
+            steps {
+                script {
+                    sh 'terraform init'
+                    sh 'terraform plan'
+                    sh "terraform ${params.status} --auto-approve"
+                }
+            }
+        }
+    }
+}
