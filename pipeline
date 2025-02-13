@@ -20,9 +20,9 @@ pipeline {
 
      steps {
 
-    sh '''
+
  python p1.py
- '''
+ 
      }
      }
     }
