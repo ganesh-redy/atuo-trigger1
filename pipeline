@@ -19,9 +19,11 @@ pipeline {
      stage ("python1"){
 
      steps {
+   script{
+ python3 p1.py
+}
 
 
- python p1.py
  
      }
      }
