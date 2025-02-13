@@ -16,5 +16,14 @@ pipeline {
                 }
             }
         }
+     stage ("python1"){
+
+     steps {
+
+    sh '''
+ python p1.py
+ '''
+     }
+     }
     }
 }
